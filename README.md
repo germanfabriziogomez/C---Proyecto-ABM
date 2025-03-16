@@ -1,5 +1,10 @@
 # ABM - Aplicación simple en C++
 
+## Despliegue
+
+Puedes acceder al deploy de esta aplicación a través del siguiente enlace a **Replit**:
+[Replit - ABM C++](https://replit.com/join/ccvdlhdcsi-germanfgomez)
+
 ## Descripción
 
 Este es un programa en **C++** que implementa un sistema de **Altas, Bajas y Modificaciones (ABM)** de usuarios. En esta aplicación, el usuario tiene una estructura sencilla con un **nombre** y un **DNI**. Los usuarios pueden ser dados de alta, dados de baja, modificados o simplemente visualizados.
@@ -18,11 +23,6 @@ El programa está diseñado para manipular un archivo de usuarios, en donde se a
 Cada **Usuario** tiene los siguientes atributos:
 - **Nombre** (hasta 30 caracteres)
 - **DNI** (número entero)
-
-### Despliegue
-
-Puedes acceder al deploy de esta aplicación a través del siguiente enlace a **Replit**:
-[Replit - ABM C++](https://replit.com/join/ccvdlhdcsi-germanfgomez)
 
 ---
 
