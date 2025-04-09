@@ -1,0 +1,29 @@
+name: Build and Run C++ Code
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Paso 1: Clonamos el repositorio
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Paso 2: Instalamos el compilador y las herramientas necesarias
+      - name: Set up C++ environment
+        run: |
+          sudo apt update
+          sudo apt install g++ make
+
+      # Paso 3: Compilamos el código
+      - name: Compile C++ code
+        run: |
+          g++ -o main main.cpp  # Ajusta según el nombre de tu archivo
+
+      # Paso 4: Ejecutamos el código compilado
+      - name: Run C++ program
+        run: ./main  # Ajusta según el nombre del archivo ejecutable
