@@ -1,29 +1,34 @@
 name: Build and Run C++ Code
 
+# Definir en qué eventos se ejecutará el flujo de trabajo
 on:
   push:
     branches:
-      - main
+      - main  # Puedes cambiar esta rama si lo deseas
+  pull_request:
+    branches:
+      - main  # Ejecutar también para pull requests
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Usar una máquina virtual con Ubuntu (lo más común para proyectos C++)
+
     steps:
       # Paso 1: Clonamos el repositorio
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Paso 2: Instalamos el compilador y las herramientas necesarias
+      # Paso 2: Instalamos las dependencias necesarias (g++ y make)
       - name: Set up C++ environment
         run: |
-          sudo apt update
-          sudo apt install g++ make
+          sudo apt update               # Actualiza la lista de paquetes
+          sudo apt install g++ make     # Instala g++ y make
 
       # Paso 3: Compilamos el código
       - name: Compile C++ code
         run: |
-          g++ -o main main.cpp  # Ajusta según el nombre de tu archivo
+          g++ -o main abm.cpp.cpp  # Asegúrate de que el nombre de tu archivo C++ sea "main.cpp", o cámbialo si es necesario
 
-      # Paso 4: Ejecutamos el código compilado
+      # Paso 4: Ejecutamos el programa
       - name: Run C++ program
-        run: ./main  # Ajusta según el nombre del archivo ejecutable
+        run: ./main  # Ejecuta el archivo compilado (en este caso, "main")
